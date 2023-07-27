@@ -45,6 +45,7 @@ GET /videos/:id : Returns One Video based on id parameter
 
 POST /videos : Creates and returns a new video
 ```
+These endpoints is initialized in the server.js where they use the routers to call upon the functions that are made in the controllers.
 
 ```
 GET /products/ : Returns All Comments
