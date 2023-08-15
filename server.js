@@ -4,7 +4,10 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require("cors");
 
-const allowedOrigins = ["https://gigihfinalsbackend.onrender.com/"];
+const allowedOrigins = [
+  "https://gigihfinalsbackend.onrender.com/",
+  "https://gigihfinalsfrontend.onrender.com/",
+];
 
 const corsOptions = {
   origin: (origin, callback) => {
@@ -32,8 +35,8 @@ db.on("error", (error) => console.error(error));
 db.once("open", async () => {
   console.log("Connected to database");
 
-  // Function to fill the database with dummy data
-  await populateDatabase();
+  // // Function to fill the database with dummy data
+  // await populateDatabase();
 
   app.listen(4000, () => console.log("Server Started"));
 });
