@@ -7,6 +7,7 @@ const cors = require("cors");
 const allowedOrigins = [
   "https://gigihfinalsbackend.onrender.com/",
   "https://gigihfinalsfrontend.onrender.com/",
+  "http://localhost:8080/",
 ];
 
 const corsOptions = {
@@ -19,8 +20,6 @@ const corsOptions = {
   },
 };
 
-app.use(cors(corsOptions));
-
 const {
   populateDatabaseVideos,
   populateDatabase,
@@ -29,8 +28,7 @@ const {
 mongoose.connect(process.env.DATABASE_URI);
 
 const db = mongoose.connection;
-app.use(cors());
-
+app.use(cors(corsOptions));
 db.on("error", (error) => console.error(error));
 db.once("open", async () => {
   console.log("Connected to database");
@@ -38,7 +36,7 @@ db.once("open", async () => {
   // // Function to fill the database with dummy data
   // await populateDatabase();
 
-  app.listen(4000, () => console.log("Server Started"));
+  app.listen(8080, () => console.log("Server Started"));
 });
 
 app.use(express.json());
