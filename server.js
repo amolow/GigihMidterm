@@ -23,7 +23,7 @@ const {
   populateDatabase,
 } = require("./util/databasePopulate.js");
 
-mongoose.connect(process.env.DATABASE_URL);
+mongoose.connect(process.env.DATABASE_URI);
 
 const db = mongoose.connection;
 app.use(cors());
