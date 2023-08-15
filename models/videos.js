@@ -13,6 +13,14 @@ const videosSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  store: {
+    type: String,
+    required: true,
+  },
+  storeAvatar: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Videos", videosSchema);
