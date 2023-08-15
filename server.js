@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require("cors");
 
-const allowedOrigins = ["https://gigihfinalsfrontend.onrender.com/"];
+const allowedOrigins = ["https://gigihfinalsbackend.onrender.com/"];
 
 const corsOptions = {
   origin: (origin, callback) => {
